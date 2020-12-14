@@ -30,7 +30,8 @@ raw.plot_psd(area_mode='std', average=True);
 
 # chosen channels
 picks = mne.pick_channels(raw.ch_names, include=['Pz','CPz','Cz','FCz','Fz','C1','C2','FC1','FC2','CP1','CP2'])
-#raw(picks = picks).plot()
+picks =raw.copy().pick_channels(['Pz','CPz','Cz','FCz','Fz','C1','C2','FC1','FC2','CP1','CP2'])
+picks.plot()
 
 #----------------------Data manipulation---------------------------#
 ###################################################################
