@@ -54,7 +54,11 @@ epochs_visual_abd_audio = mne.Epochs(raw, events, event_id=events_id, tmin=-0.2,
 epochs_visual_abd_audio.plot()
 epochs.plot_image(combine='mean')
 
-picks = mne.pick_channels(raw.ch_names, include=['Fz','FCz','Cz','CPz','Pz'])
+#picks = mne.pick_channels(raw.ch_names, include=['Fz','FCz','Cz','CPz','Pz'])
+picks = mne.pick_channels(raw.ch_names, include=['MISC001','MISC002','MISC003','MISC004','MISC005','MISC006'])
+# or channel_names=['MISC001','MISC002','MISC003','MISC004','MISC005','MISC006'] 
+#    raw[channel_names]  
+  
 epochs.plot_image(picks = picks, combine='mean', scalings=scalings, units=units)
 
 
